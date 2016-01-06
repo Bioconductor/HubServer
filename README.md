@@ -1,13 +1,14 @@
 HubServer
 ======================
 
-the ruby version of HubServer
+The ruby version of HubServer
 
 ## How to install
 
 Before attempting to install this server, consider
 whether the 
-[Dockerized version](https://github.com/dtenenba/bioc_docker/tree/master/annotationhub)
+[Dockerized
+version](https://github.com/dtenenba/bioc_docker/tree/master/experimenthub)
 would better meet your needs.
 
 
@@ -113,7 +114,7 @@ And then tell bundler to read the Gemfile and install the packages specified the
 
 #### Running the server
 
-Get the sqlite3 database  (annotationhub.sqlite3) from 
+Get the sqlite3 database  (experimenthub.sqlite3) from 
 
 http://gamay:9393/get_db
 

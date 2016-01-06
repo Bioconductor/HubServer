@@ -33,7 +33,7 @@ def parse(line, file)
             hsh[:timestamp] = DateTime.strptime(md[name],
                 "[%d/%b/%Y:%H:%M:%S %z]")
         elsif name == 'raw_url'
-            hsh[:url] = 'http://s3.amazonaws.com/annotationhub/' + md[name]
+            hsh[:url] = 'http://s3.amazonaws.com/experimenthub/' + md[name]
         end
     end
     hsh
