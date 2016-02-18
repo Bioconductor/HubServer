@@ -22,7 +22,7 @@ db_name = @config['mysql_url'].split("/").last
 url2 = @config['mysql_url'].sub(db_name, "information_schema")
 DB2 = Sequel.connect(url2)
 
-table_created_at = DB2[:tables].where(:table_schema => @config['db_name']).max(:create_time)
+table_created_at = DB2[:tables].where(:table_schema => db_name).max(:create_time)
 
 
 def convert_db()
