@@ -7,6 +7,7 @@ ENV['AHS_DATABASE_TYPE'] = 'mysql'
 require './db_init.rb'
 require 'fileutils'
 require 'sequel'
+require 'yaml'
 
 @basedir = File.dirname(__FILE__)
 
