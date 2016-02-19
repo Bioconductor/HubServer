@@ -1,1 +1,7 @@
 config.yml
+.ruby-version
+app.log
+config.yml.bak
+convert_db.log
+dbtimestamp.cache
+experimenthub.sqlite3
