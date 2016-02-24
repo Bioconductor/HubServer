@@ -7,6 +7,7 @@ ENV['HUBSERVER_DATABASE_TYPE'] = 'mysql'
 require './db_init.rb'
 require 'fileutils'
 require 'sequel'
+require 'yaml'
 
 @basedir = File.dirname(__FILE__)
 
@@ -17,10 +18,11 @@ cachefile = "#{@basedir}/dbtimestamp.cache"
 
 @config = YAML.load_file("#{@basedir}/config.yml")
 
-url2 = @config['mysql_url'].sub(@config['db_name'], "information_schema")
+db_name = @config['mysql_url'].split("/").last
+url2 = @config['mysql_url'].sub(db_name, "information_schema")
 DB2 = Sequel.connect(url2)
 
-table_created_at = DB2[:tables].where(:table_schema => @config['db_name']).max(:create_time)
+table_created_at = DB2[:tables].where(:table_schema => db_name).max(:create_time)
 
 
 def convert_db()
