@@ -26,7 +26,7 @@ class Resource < Sequel::Model
         # unless Resource.find(h).nil?
         #     return false
         # end
-        unless self.ah_id =~ /^AH/
+        unless self.ah_id =~ /^EH/
             self.ah_id = SecureRandom.base64        
         end
 
@@ -159,7 +159,7 @@ class Resource < Sequel::Model
     def after_save
         super
         if self.ah_id =~ /==$/
-            self.update(:ah_id=>"AH#{self.id}")
+            self.update(:ah_id=>"EH#{self.id}")
         end
     end
 

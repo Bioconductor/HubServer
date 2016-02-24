@@ -2,7 +2,7 @@
 # Run me via cron.
 
 
-ENV['AHS_DATABASE_TYPE'] = 'mysql'
+ENV['HUBSERVER_DATABASE_TYPE'] = 'mysql'
 
 require './db_init.rb'
 require 'fileutils'
