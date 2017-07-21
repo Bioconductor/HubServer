@@ -46,7 +46,7 @@ AWS.config(:access_key_id => config['access_key_id'],
     :secret_access_key => config['secret_access_key'])
 s3 = AWS::S3.new
 
-bucket = s3.buckets[config['logging_s3_bucket']] 
+bucket = s3.buckets[config["logging_s3_bucket"]] 
 keys = []
 logfiles = LOGGING_DB[:s3_log_files]
 log_entries = LOGGING_DB[:log_entries]
