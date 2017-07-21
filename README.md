@@ -165,5 +165,3 @@ So you can open a web browser to
       (used in convert_db.rb, migrations/001_add_test.rb)
 
 * Copy changes to to config.yml
-
-
