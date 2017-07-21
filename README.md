@@ -159,9 +159,9 @@ So you can open a web browser to
 * New set:
     - logging_s3_bucket: name of S3 bucket where logs will be stored
       (used in read_s3_logs.rb)
-    - resource_s3_url: url of the S3 bucket that contains the data resources
-      (used in app.rb, mongo2sequel.rb, read_s3_logs.rb)
     - db_name: name of MYSQL db 
       (used in convert_db.rb, migrations/001_add_test.rb)
 
 * Copy changes to to config.yml
+
+
