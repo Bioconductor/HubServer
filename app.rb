@@ -294,7 +294,7 @@ get '/log_fetch' do
     prefix = resource.location_prefix.location_prefix
     url = prefix + path
     config = YAML.load_file("#{basedir}/config.yml")
-    unless prefix == config['resource_s3_url']
+    unless prefix == config['logging_url']
         # FIXME only do this if we are on production...
         log_request(request, url, rp.id, resource.id)
     end
@@ -308,7 +308,7 @@ get '/fetch/:id' do
     prefix = resource.location_prefix.location_prefix
     url = prefix + path
     config = YAML.load_file("#{basedir}/config.yml")
-    unless prefix == config['resource_s3_url']
+    unless prefix == config['logging_url']
         # FIXME only do this if we are on production...
         log_request(request, url, rp.id, resource.id)
     end
