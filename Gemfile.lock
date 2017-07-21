@@ -44,6 +44,3 @@ DEPENDENCIES
   shotgun
   sinatra
   sqlite3
-
-BUNDLED WITH
-   1.11.2
