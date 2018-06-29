@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Hub Server API</title>
+</head>
+<body>
+    <pre>
+GET:
+/metadata/schema_version
+/metadata/highest_id
+/metadata/<%=dbname%>
+/metadata/database_timestamp
+
+/fetch/:id # id => rdatapaths.id
+
+POST: (protected)
+/resource
+
+DELETE: (protected)
+/resource/:id # id => resources.id, marks resource as expired
+
+
+
+
+
+    </pre>
+
+
+</body>
+</html>
