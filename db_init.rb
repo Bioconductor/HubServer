@@ -2,9 +2,15 @@ require 'sequel'
 require 'yaml'
 require 'logger'
 
+## This script expects these values to be set in config.yml:
+## 'hubserver_database_type'
+## 'mysql_url'
+## 'sqlite_filename'
+
 unless defined? DB
     basedir = File.dirname(__FILE__)
     config = YAML.load_file("#{basedir}/config.yml")
+    ENV['HUBSERVER_DATABASE_TYPE']=config['hubserver_database_type']
 
     if `hostname` =~ /^ip-/ and ENV['HUBSERVER_DATABASE_TYPE'].nil?
         ENV['HUBSERVER_DATABASE_TYPE']='mysql'

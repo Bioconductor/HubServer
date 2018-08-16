@@ -1,8 +1,6 @@
+## Run me via cron.
+## 'HUBSERVER_DATABASE_TYPE' must be set in crontab
 
-# Run me via cron.
-
-
-ENV['HUBSERVER_DATABASE_TYPE'] = 'mysql'
 
 require './db_init.rb'
 require 'fileutils'
@@ -10,7 +8,6 @@ require 'sequel'
 require 'yaml'
 
 @basedir = File.dirname(__FILE__)
-
 
 timestamp =  DB[:timestamp].first[:timestamp]
 
@@ -24,7 +21,6 @@ DB2 = Sequel.connect(url2)
 
 table_created_at = DB2[:tables].where(:table_schema => db_name).max(:create_time)
 
-
 def convert_db()
     mysql2_url = @config['mysql_url'].sub(/^mysql:/, "mysql2:")
     outfile = "#{@basedir}/#{@config['sqlite_filename']}"
@@ -35,7 +31,6 @@ def convert_db()
     FileUtils.mv outfile_tmp, outfile
     #puts "does it exist? #{File.exists? outfile}"
 end
-
 
 if (File.exists?(cachefile))
     cached_time = Time.parse(File.readlines(cachefile).first)
@@ -49,5 +44,3 @@ end
 f = File.open(cachefile, "w")
 f.write(timestamp.to_s)
 f.close
-
-
