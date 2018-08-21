@@ -284,14 +284,14 @@ get "/id/:id" do
     JSON.pretty_generate h
 end
 
-get "/ahid/:id" do
+get "/ehid/:id" do
     content_type "text/plain"
     associations = [:rdatapaths, :input_sources, :tags, :biocversions]
     id = params[:id]
-    if (id[0..1].upcase.start_with?("AH"))
-        id = id.sub(/^../, "AH")
+    if (id[0..1].upcase.start_with?("EH"))
+        id = id.sub(/^../, "EH")
     elsif
-        id = "AH" + id
+        id = "EH" + id
     end
     r = Resource.filter(:ah_id => "#{id}").eager(associations).all.first
     h = formatId(r, associations)
@@ -548,10 +548,10 @@ end
 get '/recordstatus/:id' do
     content_type "text/plain"
     id = params[:id]
-    if (id[0..1].upcase.start_with?("AH"))
-        id = id.sub(/^../, "AH")
+    if (id[0..1].upcase.start_with?("EH"))
+        id = id.sub(/^../, "EH")
     elsif
-        id = "AH" + id
+        id = "EH" + id
     end
     r = Resource.filter(:ah_id => id).all.first[:status_id]
     JSON.pretty_generate DB[:statuses].filter(:id => r).all.first[:status]

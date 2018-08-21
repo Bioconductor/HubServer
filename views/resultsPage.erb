@@ -32,7 +32,7 @@ tr:nth-child(even) {
 <table border="1"> 
 
     <tr>
-        <th>ah_id</th>
+        <th>eh_id</th>
         <th>Title</th>
         <th>Description</th>
         <th>Download</th>
@@ -40,7 +40,7 @@ tr:nth-child(even) {
 
 <% result.each do |row| %>
     <tr>
-        <td><a href= "/ahid/<%=row[:ah_id] %>"><%=row[:ah_id] %></a></td>
+        <td><a href= "/ehid/<%=row[:ah_id] %>"><%=row[:ah_id] %></a></td>
         <td><%= row[:title] %></td>
         <td><%= row[:description] %></td>
         <td><a href= "<%= row[:download] %>">Download <%=row[:ah_id] %></a></td>
